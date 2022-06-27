@@ -9,7 +9,7 @@ Tinode는 XMPP/ Jabber 가 아닙니다. Tinode는 XMPP와 호환되지 않습�
 
 버전 0.16은 베타 급 소프트웨어입니다. 기능은 완전하지만 몇 가지 버그가 있습니다. 아래 클라우드 서비스 중 하나를 설치 및 실행하거나 사용하려면 [지시사항](INSTALL.md)을 따르십시오. [API 설명서](docs/API.md)를 읽으십시오.
 
-<a href="https://apps.apple.com/us/app/tinode/id1483763538"><img src="docs/app-store.svg" height=36></a> <a href="https://play.google.com/store/apps/details?id=co.tinode.tindroidx"><img src="docs/play-store.svg" height=36></a> <a href="https://web.tinode.co/"><img src="docs/web-app.svg" height=36></a>
+<a href="https://apps.apple.com/us/app/cdaman123/id1483763538"><img src="docs/app-store.svg" height=36></a> <a href="https://play.google.com/store/apps/details?id=co.tinode.tindroidx"><img src="docs/play-store.svg" height=36></a> <a href="https://web.tinode.co/"><img src="docs/web-app.svg" height=36></a>
 
 ## Why?
 
@@ -29,7 +29,7 @@ IM: Instant Messanger
 
 * [API 설명서](docs/API.md) 및 [FAQ](docs/faq.md)를 읽으십시오.
 * 지원, 일반적인 질문, 토로은[https://groups.google.com/d/forum/tinode](https://groups.google.com/d/forum/tinode).에 게시하십시오.
-* 버그 및 기능 요청에 대해서는 [issue](https://github.com/tinode/chat/issues/new)를 여십시오.
+* 버그 및 기능 요청에 대해서는 [issue](https://github.com/cdaman123/chat/issues/new)를 여십시오.
 
 
 ## 공공서비스
@@ -38,15 +38,15 @@ IM: Instant Messanger
 
 ### 웹
 
-Tinode웹은 단일 페이지의 웹으로 https://web.tinode.co/ ([원본](https://github.com/tinode/webapp/))에서 이용이 가능합니다. . 아래에 있는 스크린 샷을 참고하세요. 현재 영어, 중국어 간체, 러시아어를 지원합니다. 더 많은 번역을 환영합니다.
+Tinode웹은 단일 페이지의 웹으로 https://web.tinode.co/ ([원본](https://github.com/cdaman123/webapp/))에서 이용이 가능합니다. . 아래에 있는 스크린 샷을 참고하세요. 현재 영어, 중국어 간체, 러시아어를 지원합니다. 더 많은 번역을 환영합니다.
 
 ### 안드로이드
 
-Tindroid라고 불리는 [안드로이드 버전의 Tinode](https://play.google.com/store/apps/details?id=co.tinode.tindroidx) 는 안정적으로 가동됩니다.  ([원본](https://github.com/tinode/tindroid)).  아래에 있는 스크린 샷을 참고하세요. 편의를 위해 [디버그 APK](https://github.com/tinode/tindroid/releases/latest)도 제공합니다. 현재 영어, 중국어 간체, 러시아어를 지원합니다. 더 많은 번역을 환영합니다.
+Tindroid라고 불리는 [안드로이드 버전의 Tinode](https://play.google.com/store/apps/details?id=co.tinode.tindroidx) 는 안정적으로 가동됩니다.  ([원본](https://github.com/cdaman123/tindroid)).  아래에 있는 스크린 샷을 참고하세요. 편의를 위해 [디버그 APK](https://github.com/cdaman123/tindroid/releases/latest)도 제공합니다. 현재 영어, 중국어 간체, 러시아어를 지원합니다. 더 많은 번역을 환영합니다.
 
 ### iOS
 
-Tinodios라고 불리는 [iOS 버전의 Tinode](https://apps.apple.com/app/reference-to-tinodios-here/id123) 안정적으로 가동됩니다.([원본](https://github.com/tinode/ios)). 아래에 있는 스크린샷을 참고하세요. 현재 영어와 중국어 간체를 지원합니다. 더 많은 번역을 환영합니다.
+Tinodios라고 불리는 [iOS 버전의 Tinode](https://apps.apple.com/app/reference-to-tinodios-here/id123) 안정적으로 가동됩니다.([원본](https://github.com/cdaman123/ios)). 아래에 있는 스크린샷을 참고하세요. 현재 영어와 중국어 간체를 지원합니다. 더 많은 번역을 환영합니다.
 
 
 ## 데모/샌드박스
@@ -63,14 +63,14 @@ alice, bob, carol, dave, frank 중 하나로 로그인할 수 있습니다. 비�
 * 일반적으로 새로운 계정을 등록하면 이메일 주소를 묻는 메시지가 표시됩니다. 서버는 유효성 검사 코드가 포함된 메일을 보내며 이를 사용하여 계정을 검증하는 데 사용할 수 있습니다. 테스트를 보다 쉽게 할 수 있도록 서버는 유효성 검사 코드로 123456을 또한 허용합니다. Tinode.conf에서 ”debug_response”: “123456”행을 제거하여 이 옵션을 비활성화 시킬 수 있습니다.
 * 샌드박스 서버는 [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication)에 대한 하드 코딩된 요구사항과 함께 [ACME](https://letsencrypt.org/) TLS [구현](https://godoc.org/golang.org/x/crypto/acme)을 사용하도록 구성되었습니다. 만약 연결할 수 없을 경우 TLS 클라이언트의 SNI 지원 누락일 가능성이 높습니다. 그 경우 다른 클라이언트를 사용하세요.
 * 기본 웹 앱은 하나의 축소된 자바스크립트 번들과 축소된 CSS를 가져옵니다. 축소되지 않은 버전은 https://sandbox.tinode.co/index-dev.html 에서도 제공됩니다.
-* 데모가 같은 [도커 이미지](https://hub.docker.com/u/tinode/)도 사용 가능합니다.
+* 데모가 같은 [도커 이미지](https://hub.docker.com/u/cdaman123/)도 사용 가능합니다.
 * 샌드박스에 대해 소프트웨어를 테스트하고 해킹하는 작업, 기타 작업들을 수행할 수 있습니다. DDos는 절대 사용하지 마세요.
 
 ## 특징
 
 ### 지원 기능
 
-* [Android](https://github.com/tinode/tindroid/), [iOS](https://github.com/tinode/ios), [web](https://github.com/tinode/webapp/), 그리고 [command line](tn-cli/) 클라이언트.
+* [Android](https://github.com/cdaman123/tindroid/), [iOS](https://github.com/cdaman123/ios), [web](https://github.com/cdaman123/webapp/), 그리고 [command line](tn-cli/) 클라이언트.
 * 1대1 메시징.
 * 모든 구성원의 접근 권한을 가진 그룹 메시징을 개별적으로 관리한다. 최대 구성원 수는 설정할 수 있다(기본적으로 128명).
 * 다양한 작업에 대한 권한을 가진 항목 액세스 제어
@@ -116,7 +116,7 @@ alice, bob, carol, dave, frank 중 하나로 로그인할 수 있습니다. 비�
 
 ## 스크린샷
 
-### [안드로이드](https://github.com/tinode/tindroid/)
+### [안드로이드](https://github.com/cdaman123/tindroid/)
 
 <p align="center">
 <img src="docs/android-contacts.png" alt="Android screenshot: list of chats" width=270 />
@@ -124,19 +124,19 @@ alice, bob, carol, dave, frank 중 하나로 로그인할 수 있습니다. 비�
 <img src="docs/android-account.png" alt="Android screenshot: account settings" width=270 />
 </p>
 
-### [iOS](https://github.com/tinode/ios)
+### [iOS](https://github.com/cdaman123/ios)
 
 <p align="center">
 <img src="docs/ios-contacts.png" alt="iOS screenshot: list of chats" width=207 /> <img src="docs/ios-chat.png" alt="iOS screenshot: one conversation" width=207 /> <img src="docs/ios-acc-personal.png" alt="iOS screenshot: account settings" width="207" />
 </p>
 
-### [데스크탑 웹](https://github.com/tinode/webapp/)
+### [데스크탑 웹](https://github.com/cdaman123/webapp/)
 
 <p align="center">
   <img src="docs/web-desktop-2.png" alt="Desktop web: full app" width=810 />
 </p>
 
-### [모바일 웹](https://github.com/tinode/webapp/)
+### [모바일 웹](https://github.com/cdaman123/webapp/)
 
 <p align="center">
   <img src="docs/web-mob-contacts-1.png" alt="Mobile web: contacts" width=250 /> <img src="docs/web-mob-chat-1.png" alt="Mobile web: chat" width=250 /> <img src="docs/web-mob-info-1.png" alt="Mobile web: topic info" width=250 />

@@ -1,6 +1,6 @@
 # Using Docker to run Tinode
 
-All images are available at https://hub.docker.com/r/tinode/
+All images are available at https://hub.docker.com/r/cdaman123/
 
 1. [Install Docker](https://docs.docker.com/install/) 1.8 or above. The provided dockerfiles are dependent on [Docker networking](https://docs.docker.com/network/) which may not work with the older Docker.
 
@@ -40,22 +40,22 @@ All images are available at https://hub.docker.com/r/tinode/
 
 	1. **RethinkDB**:
 	```
-	$ docker run -p 6060:6060 -d --name tinode-srv --network tinode-net tinode/tinode-rethinkdb:latest
+	$ docker run -p 6060:6060 -d --name tinode-srv --network tinode-net cdaman123/tinode-rethinkdb:latest
 	```
 
 	2. **MySQL**:
 	```
-	$ docker run -p 6060:6060 -d --name tinode-srv --network tinode-net tinode/tinode-mysql:latest
+	$ docker run -p 6060:6060 -d --name tinode-srv --network tinode-net cdaman123/tinode-mysql:latest
 	```
 
 	3. **MongoDB**:
 	```
-	$ docker run -p 6060:6060 -d --name tinode-srv --network tinode-net tinode/tinode-mongodb:latest
+	$ docker run -p 6060:6060 -d --name tinode-srv --network tinode-net cdaman123/tinode-mongodb:latest
 	```
 
-	You can also run Tinode with the `tinode/tinode` image (which has all of the above DB adapters compiled in). You will need to specify the database adapter via `STORE_USE_ADAPTER` environment variable. E.g. for `mysql`, the command line will look like
+	You can also run Tinode with the `cdaman123/tinode` image (which has all of the above DB adapters compiled in). You will need to specify the database adapter via `STORE_USE_ADAPTER` environment variable. E.g. for `mysql`, the command line will look like
 	```
-	$ docker run -p 6060:6060 -d -e STORE_USE_ADAPTER mysql --name tinode-srv --network tinode-net tinode/tinode:latest
+	$ docker run -p 6060:6060 -d -e STORE_USE_ADAPTER mysql --name tinode-srv --network tinode-net cdaman123/tinode:latest
 	```
 
 	See [below](#supported-environment-variables) for more options.
@@ -63,10 +63,10 @@ All images are available at https://hub.docker.com/r/tinode/
 	The port mapping `-p 5678:1234` tells Docker to map container's port 1234 to host's port 5678 making server accessible at http://localhost:5678/. The container will initialize the database with test data on the first run.
 
 	You may replace `:latest` with a different tag. See all all available tags here:
-	 * [MySQL tags](https://hub.docker.com/r/tinode/tinode-mysql/tags/)
-	 * [RethinkDB tags](https://hub.docker.com/r/tinode/tinode-rethink/tags/)
-	 * [MongoDB tags](https://hub.docker.com/r/tinode/tinode-mongodb/tags/)
-	 * [All bundle tags](https://hub.docker.com/r/tinode/tinode/tags/) (comming soon)
+	 * [MySQL tags](https://hub.docker.com/r/cdaman123/tinode-mysql/tags/)
+	 * [RethinkDB tags](https://hub.docker.com/r/cdaman123/tinode-rethink/tags/)
+	 * [MongoDB tags](https://hub.docker.com/r/cdaman123/tinode-mongodb/tags/)
+	 * [All bundle tags](https://hub.docker.com/r/cdaman123/cdaman123/tags/) (comming soon)
 
 5. Test the installation by pointing your browser to [http://localhost:6060/](http://localhost:6060/).
 
@@ -79,7 +79,7 @@ The container comes with a built-in config file which can be customized with val
 $ docker run -p 6060:6060 -d --name tinode-srv --network tinode-net \
 		--volume /users/jdoe/new_tinode.conf:/tinode.conf \
 		--env EXT_CONFIG=/tinode.conf \
-		tinode/tinode-mysql:latest
+		cdaman123/tinode-mysql:latest
 ```
 If you set `EXT_CONFIG` all other environment variables except `RESET_DB`, `FCM_SENDER_ID`, `FCM_VAPID_KEY` are ignored.
 
@@ -117,7 +117,7 @@ $ docker run -p 6060:6060 -d --name tinode-srv --network tinode-net \
 		--env FCM_PROJECT_ID=myproject-1234 \
 		--env FCM_SENDER_ID=141421356237 \
 		--env FCM_VAPID_KEY=83_Or_So_Random_Looking_Characters \
-		tinode/tinode-mysql:latest
+		cdaman123/tinode-mysql:latest
 ```
 
 ### Run the chatbot
@@ -162,7 +162,7 @@ You can specify the following environment variables when issuing `docker run` co
 | `SMTP_PORT` | number |  | Port number of the SMTP server to use for sending verification emails, e.g. `25` or `587`. |
 | `SMTP_SENDER` | string |  | [RFC 5322](https://tools.ietf.org/html/rfc5322) email address to use in the `FROM` field of verification emails, e.g. `'"John Doe" <jdoe@example.com>'`. |
 | `SMTP_SERVER` | string |  | Name of the SMTP server to use for sending verification emails, e.g. `smtp.gmail.com`. If SMTP_SERVER is not defined, email verification will be disabled. |
-| `STORE_USE_ADAPTER` | string |  | DB adapter name (specify with `tinode/tinode` container only) |
+| `STORE_USE_ADAPTER` | string |  | DB adapter name (specify with `cdaman123/tinode` container only) |
 | `TLS_CONTACT_ADDRESS` | string |  | Optional email to use as contact for [LetsEncrypt](https://letsencrypt.org/) certificates, e.g. `jdoe@example.com`. |
 | `TLS_DOMAIN_NAME` | string |  | If non-empty, enables TLS (http**s**) and configures domain name of your container, e.g. `www.example.com`. In order for TLS to work you have to expose your HTTPS port to the Internet and correctly configure DNS. It WILL FAIL with `localhost` or unroutable IPs. |
 | `UID_ENCRYPTION_KEY` | string | `la6YsO+bNX/+XIkOqc5Svw==` | base64-encoded 16 random bytes used as an encryption key for user IDs. |
@@ -177,7 +177,7 @@ $ openssl rand -base64 <desired length>
 ## Metrics Exporter
 
 See [monitoring/exporter/README](../monitoring/exporter/README.md) for information on the Exporter.
-Container is also available as a part of the Tinode docker distribution: `tinode/exporter`.
+Container is also available as a part of the Tinode docker distribution: `cdaman123/exporter`.
 Run it with
 
 ```
@@ -185,7 +185,7 @@ $ docker run -p 6222:6222 -d --name tinode-exporter --network tinode-net \
 		--env SERVE_FOR=<prometheus|influxdb> \
 		--env TINODE_ADDR=<tinode metrics endpoint> \
 		... <monitoring service specific vars> \
-		tinode/exporter:latest
+		cdaman123/exporter:latest
 ```
 
 Available variables:

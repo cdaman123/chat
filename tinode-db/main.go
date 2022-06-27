@@ -12,14 +12,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tinode/chat/server/auth"
+	"github.com/cdaman123/chat/server/auth"
 
-	_ "github.com/tinode/chat/server/db/mongodb"
-	_ "github.com/tinode/chat/server/db/mysql"
-	_ "github.com/tinode/chat/server/db/rethinkdb"
-	"github.com/tinode/chat/server/store"
-	"github.com/tinode/chat/server/store/types"
-	jcr "github.com/tinode/jsonco"
+	_ "github.com/cdaman123/chat/server/db/mongodb"
+	_ "github.com/cdaman123/chat/server/db/mysql"
+	_ "github.com/cdaman123/chat/server/db/rethinkdb"
+	"github.com/cdaman123/chat/server/store"
+	"github.com/cdaman123/chat/server/store/types"
+	jcr "github.com/cdaman123/jsonco"
 )
 
 type configType struct {

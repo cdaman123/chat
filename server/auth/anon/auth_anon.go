@@ -7,9 +7,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/tinode/chat/server/auth"
-	"github.com/tinode/chat/server/store"
-	"github.com/tinode/chat/server/store/types"
+	"github.com/cdaman123/chat/server/auth"
+	"github.com/cdaman123/chat/server/store"
+	"github.com/cdaman123/chat/server/store/types"
 )
 
 // authenticator is the singleton instance of the anonymous authorizer.

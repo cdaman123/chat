@@ -1228,7 +1228,7 @@ meta: {
       seen: { // object, if this is a P2P topic, info on when the peer was last
               //online
         when: "2015-10-24T10:26:09.716Z", // timestamp
-        ua: "Tinode/1.0 (Android 5.1)" // string, user agent of peer's client
+        ua: "cdaman123/1.0 (Android 5.1)" // string, user agent of peer's client
       }
     },
     ...
@@ -1265,7 +1265,7 @@ pres: {
   clear: 15, // integer, "what" is "del", an update to the delete transaction ID.
   delseq: [{low: 123}, {low: 126, hi: 136}], // array of ranges, "what" is "del",
              // ranges of IDs of deleted messages, optional
-  ua: "Tinode/1.0 (Android 2.2)", // string, a User Agent string identifying the client
+  ua: "cdaman123/1.0 (Android 2.2)", // string, a User Agent string identifying the client
              // software if "what" is "on" or "ua", optional
   act: "usr2il9suCbuko",  // string, user who performed the action, optional
   tgt: "usrRkDVe0PYDOo",  // string, user affected by the action, optional

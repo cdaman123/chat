@@ -10,10 +10,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/tinode/chat/server/logs"
-	"github.com/tinode/chat/server/push"
-	"github.com/tinode/chat/server/push/fcm"
-	"github.com/tinode/chat/server/store"
+	"github.com/cdaman123/chat/server/logs"
+	"github.com/cdaman123/chat/server/push"
+	"github.com/cdaman123/chat/server/push/fcm"
+	"github.com/cdaman123/chat/server/store"
 )
 
 const (

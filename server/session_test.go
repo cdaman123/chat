@@ -7,11 +7,11 @@ import (
 	"time"
 
 	"github.com/golang/mock/gomock"
-	"github.com/tinode/chat/server/auth"
-	"github.com/tinode/chat/server/auth/mock_auth"
-	"github.com/tinode/chat/server/store"
-	"github.com/tinode/chat/server/store/mock_store"
-	"github.com/tinode/chat/server/store/types"
+	"github.com/cdaman123/chat/server/auth"
+	"github.com/cdaman123/chat/server/auth/mock_auth"
+	"github.com/cdaman123/chat/server/store"
+	"github.com/cdaman123/chat/server/store/mock_store"
+	"github.com/cdaman123/chat/server/store/types"
 )
 
 func TestDispatchHello(t *testing.T) {

@@ -91,29 +91,29 @@ Quotes are read from `quotes.txt` by default. The file is plain text with one qu
 2. In _step 4_ run the server adding `--env PLUGIN_PYTHON_CHAT_BOT_ENABLED=true` and `--volume botdata:/botdata` to the command line:
 	1. **RethinkDB**:
 	```
-	$ docker run -p 6060:18080 -d --name tinode-srv --env PLUGIN_PYTHON_CHAT_BOT_ENABLED=true --volume botdata:/botdata --network tinode-net tinode/tinode-rethink:latest
+	$ docker run -p 6060:18080 -d --name tinode-srv --env PLUGIN_PYTHON_CHAT_BOT_ENABLED=true --volume botdata:/botdata --network tinode-net cdaman123/tinode-rethink:latest
 	```
 	2. **MySQL**:
 	```
-	$ docker run -p 6060:18080 -d --name tinode-srv --env PLUGIN_PYTHON_CHAT_BOT_ENABLED=true --volume botdata:/botdata --network tinode-net tinode/tinode-mysql:latest
+	$ docker run -p 6060:18080 -d --name tinode-srv --env PLUGIN_PYTHON_CHAT_BOT_ENABLED=true --volume botdata:/botdata --network tinode-net cdaman123/tinode-mysql:latest
 	```
 	3. **MongoDB**:
 	```
-	$ docker run -p 6060:18080 -d --name tinode-srv --env PLUGIN_PYTHON_CHAT_BOT_ENABLED=true --volume botdata:/botdata --network tinode-net tinode/tinode-mongodb:latest
+	$ docker run -p 6060:18080 -d --name tinode-srv --env PLUGIN_PYTHON_CHAT_BOT_ENABLED=true --volume botdata:/botdata --network tinode-net cdaman123/tinode-mongodb:latest
 	```
 
 3. Run the chatbot
 	```
-	$ docker run -d --name tino-chatbot --network tinode-net --volume botdata:/botdata tinode/chatbot:latest
+	$ docker run -d --name tino-chatbot --network tinode-net --volume botdata:/botdata cdaman123/chatbot:latest
 	```
 
 4. Test that the bot is functional by pointing your browser to http://localhost:6060/, login and talk to user `Tino`. The user should respond to every message with a random quote.
 
 
 You may replace the `:latest` with a different tag. See all available tags here:
- * [Tinode-MySQL tags](https://hub.docker.com/r/tinode/tinode-mysql/tags/)
- * [Tinode-RethinkDB tags](https://hub.docker.com/r/tinode/tinode-rethink/tags/)
- * [Tinode-MongoDB tags](https://hub.docker.com/r/tinode/tinode-mongodb/tags/)
- * [Chatbot tags](https://hub.docker.com/r/tinode/chatbot/tags/)
+ * [Tinode-MySQL tags](https://hub.docker.com/r/cdaman123/tinode-mysql/tags/)
+ * [Tinode-RethinkDB tags](https://hub.docker.com/r/cdaman123/tinode-rethink/tags/)
+ * [Tinode-MongoDB tags](https://hub.docker.com/r/cdaman123/tinode-mongodb/tags/)
+ * [Chatbot tags](https://hub.docker.com/r/cdaman123/chatbot/tags/)
 
 In general try to use docker images all with the same tag.

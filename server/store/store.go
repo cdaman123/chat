@@ -8,13 +8,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tinode/chat/server/logs"
+	"github.com/cdaman123/chat/server/logs"
 
-	"github.com/tinode/chat/server/auth"
-	adapter "github.com/tinode/chat/server/db"
-	"github.com/tinode/chat/server/media"
-	"github.com/tinode/chat/server/store/types"
-	"github.com/tinode/chat/server/validate"
+	"github.com/cdaman123/chat/server/auth"
+	adapter "github.com/cdaman123/chat/server/db"
+	"github.com/cdaman123/chat/server/media"
+	"github.com/cdaman123/chat/server/store/types"
+	"github.com/cdaman123/chat/server/validate"
 )
 
 var adp adapter.Adapter

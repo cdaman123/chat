@@ -21,15 +21,15 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	adapter "github.com/tinode/chat/server/db"
-	jcr "github.com/tinode/jsonco"
+	adapter "github.com/cdaman123/chat/server/db"
+	jcr "github.com/cdaman123/jsonco"
 	b "go.mongodb.org/mongo-driver/bson"
 	mdb "go.mongodb.org/mongo-driver/mongo"
 	mdbopts "go.mongodb.org/mongo-driver/mongo/options"
 
-	backend "github.com/tinode/chat/server/db/mongodb"
-	"github.com/tinode/chat/server/logs"
-	"github.com/tinode/chat/server/store/types"
+	backend "github.com/cdaman123/chat/server/db/mongodb"
+	"github.com/cdaman123/chat/server/logs"
+	"github.com/cdaman123/chat/server/store/types"
 )
 
 type configType struct {

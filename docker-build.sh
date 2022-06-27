@@ -36,11 +36,11 @@ dbtags=( mysql mongodb rethinkdb alldbs )
 for dbtag in "${dbtags[@]}"
 do
   if [ "$dbtag" == "alldbs" ]; then
-    # For alldbs, container name is tinode/tinode.
-    name="tinode/tinode"
+    # For alldbs, container name is cdaman123/tinode.
+    name="cdaman123/tinode"
   else
-    # Otherwise, tinode/tinode-$dbtag.
-    name="tinode/tinode-${dbtag}"
+    # Otherwise, cdaman123/tinode-$dbtag.
+    name="cdaman123/tinode-${dbtag}"
   fi
   separator=
   rmitags="${name}:${ver[0]}.${ver[1]}.${ver[2]}"
@@ -54,21 +54,21 @@ do
 done
 
 # Build chatbot image
-buildtags="--tag tinode/chatbot:${ver[0]}.${ver[1]}.${ver[2]}"
-rmitags="tinode/chatbot:${ver[0]}.${ver[1]}.${ver[2]}"
+buildtags="--tag cdaman123/chatbot:${ver[0]}.${ver[1]}.${ver[2]}"
+rmitags="cdaman123/chatbot:${ver[0]}.${ver[1]}.${ver[2]}"
 if [ -n "$FULLRELEASE" ]; then
-  rmitags="${rmitags} tinode/chatbot:latest tinode/chatbot:${ver[0]}.${ver[1]}"
-  buildtags="${buildtags}  --tag tinode/chatbot:latest --tag tinode/chatbot:${ver[0]}.${ver[1]}"
+  rmitags="${rmitags} cdaman123/chatbot:latest cdaman123/chatbot:${ver[0]}.${ver[1]}"
+  buildtags="${buildtags}  --tag cdaman123/chatbot:latest --tag cdaman123/chatbot:${ver[0]}.${ver[1]}"
 fi
 docker rmi ${rmitags}
 docker ${buildcmd} --build-arg VERSION=$tag ${buildtags} docker/chatbot
 
 # Build exporter image
-buildtags="--tag tinode/exporter:${ver[0]}.${ver[1]}.${ver[2]}"
-rmitags="tinode/exporter:${ver[0]}.${ver[1]}.${ver[2]}"
+buildtags="--tag cdaman123/exporter:${ver[0]}.${ver[1]}.${ver[2]}"
+rmitags="cdaman123/exporter:${ver[0]}.${ver[1]}.${ver[2]}"
 if [ -n "$FULLRELEASE" ]; then
-  rmitags="${rmitags} tinode/exporter:latest tinode/exporter:${ver[0]}.${ver[1]}"
-  buildtags="${buildtags}  --tag tinode/exporter:latest --tag tinode/exporter:${ver[0]}.${ver[1]}"
+  rmitags="${rmitags} cdaman123/exporter:latest cdaman123/exporter:${ver[0]}.${ver[1]}"
+  buildtags="${buildtags}  --tag cdaman123/exporter:latest --tag cdaman123/exporter:${ver[0]}.${ver[1]}"
 fi
 docker rmi ${rmitags}
 docker ${buildcmd} --build-arg VERSION=$tag ${buildtags} docker/exporter

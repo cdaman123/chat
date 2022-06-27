@@ -19,9 +19,9 @@ import (
 	"strings"
 	textt "text/template"
 
-	"github.com/tinode/chat/server/logs"
-	"github.com/tinode/chat/server/store"
-	t "github.com/tinode/chat/server/store/types"
+	"github.com/cdaman123/chat/server/logs"
+	"github.com/cdaman123/chat/server/store"
+	t "github.com/cdaman123/chat/server/store/types"
 	i18n "golang.org/x/text/language"
 )
 

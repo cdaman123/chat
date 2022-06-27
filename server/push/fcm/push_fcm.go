@@ -12,10 +12,10 @@ import (
 	fbase "firebase.google.com/go"
 	fcm "firebase.google.com/go/messaging"
 
-	"github.com/tinode/chat/server/logs"
-	"github.com/tinode/chat/server/push"
-	"github.com/tinode/chat/server/store"
-	"github.com/tinode/chat/server/store/types"
+	"github.com/cdaman123/chat/server/logs"
+	"github.com/cdaman123/chat/server/push"
+	"github.com/cdaman123/chat/server/store"
+	"github.com/cdaman123/chat/server/store/types"
 
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/option"

@@ -45,24 +45,24 @@ do
   name="$(containerName $dbtag)"
   # Deploy tagged image
   if [ -n "$FULLRELEASE" ]; then
-    docker push tinode/${name}:latest
-    docker push tinode/${name}:"${ver[0]}.${ver[1]}"
+    docker push cdaman123/${name}:latest
+    docker push cdaman123/${name}:"${ver[0]}.${ver[1]}"
   fi
-  docker push tinode/${name}:"${ver[0]}.${ver[1]}.${ver[2]}"
+  docker push cdaman123/${name}:"${ver[0]}.${ver[1]}.${ver[2]}"
 done
 
 # Deploy chatbot images
 if [ -n "$FULLRELEASE" ]; then
-  docker push tinode/chatbot:latest
-  docker push tinode/chatbot:"${ver[0]}.${ver[1]}"
+  docker push cdaman123/chatbot:latest
+  docker push cdaman123/chatbot:"${ver[0]}.${ver[1]}"
 fi
-docker push tinode/chatbot:"${ver[0]}.${ver[1]}.${ver[2]}"
+docker push cdaman123/chatbot:"${ver[0]}.${ver[1]}.${ver[2]}"
 
 # Deploy exporter images
 if [ -n "$FULLRELEASE" ]; then
-  docker push tinode/exporter:latest
-  docker push tinode/exporter:"${ver[0]}.${ver[1]}"
+  docker push cdaman123/exporter:latest
+  docker push cdaman123/exporter:"${ver[0]}.${ver[1]}"
 fi
-docker push tinode/exporter:"${ver[0]}.${ver[1]}.${ver[2]}"
+docker push cdaman123/exporter:"${ver[0]}.${ver[1]}.${ver[2]}"
 
 docker logout

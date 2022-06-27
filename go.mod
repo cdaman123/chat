@@ -1,4 +1,4 @@
-module github.com/tinode/chat
+module github.com/cdaman123/chat
 
 go 1.16
 
@@ -19,8 +19,8 @@ require (
 	github.com/nyaruka/phonenumbers v1.0.75
 	github.com/prometheus/client_golang v1.12.2
 	github.com/prometheus/common v0.34.0
-	github.com/tinode/jsonco v1.0.0
-	github.com/tinode/snowflake v1.0.0
+	github.com/cdaman123/jsonco v1.0.0
+	github.com/cdaman123/snowflake v1.0.0
 	go.mongodb.org/mongo-driver v1.9.1
 	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e
 	golang.org/x/net v0.0.0-20220526153639-5463443f8c37

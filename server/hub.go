@@ -14,10 +14,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/tinode/chat/server/auth"
-	"github.com/tinode/chat/server/logs"
-	"github.com/tinode/chat/server/store"
-	"github.com/tinode/chat/server/store/types"
+	"github.com/cdaman123/chat/server/auth"
+	"github.com/cdaman123/chat/server/logs"
+	"github.com/cdaman123/chat/server/store"
+	"github.com/cdaman123/chat/server/store/types"
 )
 
 // RequestLatencyDistribution is an array of request latency distribution bounds (in milliseconds).
@@ -107,13 +107,13 @@ func newHub() *Hub {
 	h := &Hub{
 		topics: &sync.Map{},
 		// TODO: verify if these channels have to be buffered.
-		routeCli:   make(chan *ClientComMessage, 4096),
-		routeSrv:   make(chan *ServerComMessage, 4096),
-		join:       make(chan *ClientComMessage, 256),
-		unreg:      make(chan *topicUnreg, 256),
+		routeCli:   make(chan *ClientComMessage, 8192),
+		routeSrv:   make(chan *ServerComMessage, 8192),
+		join:       make(chan *ClientComMessage, 8192),
+		unreg:      make(chan *topicUnreg, 8192),
 		rehash:     make(chan bool),
-		meta:       make(chan *ClientComMessage, 128),
-		userStatus: make(chan *userStatusReq, 128),
+		meta:       make(chan *ClientComMessage, 8192),
+		userStatus: make(chan *userStatusReq, 8192),
 		shutdown:   make(chan chan<- bool),
 	}
 
@@ -173,11 +173,11 @@ func (h *Hub) run() {
 					// Indicates a proxy topic.
 					isProxy:   globals.cluster.isRemoteTopic(join.RcptTo),
 					sessions:  make(map[*Session]perSessionData),
-					clientMsg: make(chan *ClientComMessage, 192),
-					serverMsg: make(chan *ServerComMessage, 64),
-					reg:       make(chan *ClientComMessage, 256),
-					unreg:     make(chan *ClientComMessage, 256),
-					meta:      make(chan *ClientComMessage, 64),
+					clientMsg: make(chan *ClientComMessage, 8192),
+					serverMsg: make(chan *ServerComMessage, 8192),
+					reg:       make(chan *ClientComMessage, 8192),
+					unreg:     make(chan *ClientComMessage, 8192),
+					meta:      make(chan *ClientComMessage, 8192),
 					perUser:   make(map[types.Uid]perUserData),
 					exit:      make(chan *shutDown, 1),
 				}
